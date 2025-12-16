@@ -1,0 +1,42 @@
+<div class="container">
+  <h2>Faculty Signup</h2>
+
+  <div class="form-group">
+    <input
+      type="text"
+      [(ngModel)]="name"
+      placeholder="Full Name"
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="email"
+      [(ngModel)]="email"
+      placeholder="Email Address"
+    />
+  </div>
+
+  <div class="form-group">
+    <input
+      type="password"
+      [(ngModel)]="password"
+      placeholder="Password"
+    />
+  </div>
+
+  <p class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </p>
+
+  <button
+    (click)="signup()"
+    [disabled]="loading"
+  >
+    {{ loading ? 'Signing up...' : 'Signup' }}
+  </button>
+
+  <p class="note">
+    Your account will be activated after admin approval.
+  </p>
+</div>

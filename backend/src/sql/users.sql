@@ -1,0 +1,1 @@
+SELECT * FROM rbac_db.users;

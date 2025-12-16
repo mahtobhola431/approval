@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="header">
+    <h2>Admin Dashboard</h2>
+    <button class="logout-btn" (click)="logout()">Logout</button>
+  </div>
+
+  <!-- Pending Faculty Section -->
+  <section class="section">
+    <h3>Pending Faculty Approval</h3>
+
+    <p *ngIf="loadingPending">Loading pending faculty...</p>
+    <p *ngIf="!loadingPending && pendingFaculty.length === 0">
+      No pending faculty approvals 🎉
+    </p>
+
+    <table *ngIf="!loadingPending && pendingFaculty.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let f of pendingFaculty">
+          <td>{{ f.name }}</td>
+          <td>{{ f.email }}</td>
+          <td>
+            <button class="approve-btn" (click)="approveFaculty(f.id)">
+              Approve
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Users Section -->
+  <section class="section">
+    <h3>All Users</h3>
+
+    <p *ngIf="loadingUsers">Loading users...</p>
+    <p *ngIf="!loadingUsers && users.length === 0">
+      No users found
+    </p>
+
+    <table *ngIf="!loadingUsers && users.length > 0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let u of users">
+          <td>{{ u.name }}</td>
+          <td>{{ u.email }}</td>
+          <td>{{ u.role }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
