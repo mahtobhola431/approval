@@ -3,7 +3,7 @@ const cors = require("cors");
 const app = express();
 const { PORT } = require("./config/env");
 
-// 🔓 Allow all origins (DEV / INTERVIEW)
+
 app.use(cors());
 
 app.use(express.json());

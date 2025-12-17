@@ -1,27 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background: #f5f5f5;
-}
-
-.container {
+.login-box {
   max-width: 400px;
   margin: 80px auto;
   background: #fff;
-  padding: 20px;
-  border-radius: 6px;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-input, button {
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
   width: 100%;
   padding: 10px;
   margin-top: 10px;
 }
 
 button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 15px;
   background: #1976d2;
   color: white;
   border: none;
   cursor: pointer;
+  border-radius: 4px;
+}
+
+button:hover {
+  background: #125aa3;
+}
+
+.signup-text {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.signup-text a {
+  color: #1976d2;
+  cursor: pointer;
+  text-decoration: underline;
 }
