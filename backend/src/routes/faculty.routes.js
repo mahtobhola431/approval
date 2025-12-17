@@ -10,11 +10,11 @@ router.use(auth, role("FACULTY"), approval);
 
 router.post("/students", async (req, res) => {
   const { name, email, password } = req.body;
-  const hash = await hashPassword(password);
+
 
   await db.query(
     `INSERT INTO users
-     (name,email,password_hash,role,is_approved,created_by)
+     (name,email,password,role,is_approved,created_by)
      VALUES (?,?,?,?,1,?)`,
     [name, email, hash, "STUDENT", req.user.id]
   );
